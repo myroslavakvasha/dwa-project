@@ -1,0 +1,67 @@
+﻿html {
+    background-color: white;
+    font-family: 'Montserrat', sans-serif !important;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    padding: 30px;
+}
+
+.wrapper {
+    width: 70%;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.options-wrapper {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+select {
+    width: 80px;
+    height: 30px;
+    border: 1px solid grey;
+    background-color: transparent;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.action-button {
+    width: 120px;
+    height: 30px;
+    border: 1px solid grey;
+    background-color: transparent;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+
+.logout-button {
+    width: 120px;
+    height: 30px;
+    border: 1px solid grey;
+    background-color: transparent;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+select:hover,
+.action-button:hover,
+.logout-button:hover {
+    outline: none;
+    border-color: rgb(196, 16, 97);
+    box-shadow: 0 0 3px rgb(196, 16, 97);
+}
+
+li{
+    padding: 5px 0px;
+}

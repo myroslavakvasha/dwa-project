@@ -1,0 +1,14 @@
+C:\DATA\uni\current\DWA\Project\ProjectTask\GrillPizzaOrders\DAL\bin\Debug\net8.0\DAL.deps.json
+C:\DATA\uni\current\DWA\Project\ProjectTask\GrillPizzaOrders\DAL\bin\Debug\net8.0\DAL.runtimeconfig.json
+C:\DATA\uni\current\DWA\Project\ProjectTask\GrillPizzaOrders\DAL\bin\Debug\net8.0\DAL.dll
+C:\DATA\uni\current\DWA\Project\ProjectTask\GrillPizzaOrders\DAL\bin\Debug\net8.0\DAL.pdb
+C:\DATA\uni\current\DWA\Project\ProjectTask\GrillPizzaOrders\DAL\obj\Debug\net8.0\DAL.csproj.AssemblyReference.cache
+C:\DATA\uni\current\DWA\Project\ProjectTask\GrillPizzaOrders\DAL\obj\Debug\net8.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\DATA\uni\current\DWA\Project\ProjectTask\GrillPizzaOrders\DAL\obj\Debug\net8.0\DAL.AssemblyInfoInputs.cache
+C:\DATA\uni\current\DWA\Project\ProjectTask\GrillPizzaOrders\DAL\obj\Debug\net8.0\DAL.AssemblyInfo.cs
+C:\DATA\uni\current\DWA\Project\ProjectTask\GrillPizzaOrders\DAL\obj\Debug\net8.0\DAL.csproj.CoreCompileInputs.cache
+C:\DATA\uni\current\DWA\Project\ProjectTask\GrillPizzaOrders\DAL\obj\Debug\net8.0\DAL.dll
+C:\DATA\uni\current\DWA\Project\ProjectTask\GrillPizzaOrders\DAL\obj\Debug\net8.0\refint\DAL.dll
+C:\DATA\uni\current\DWA\Project\ProjectTask\GrillPizzaOrders\DAL\obj\Debug\net8.0\DAL.pdb
+C:\DATA\uni\current\DWA\Project\ProjectTask\GrillPizzaOrders\DAL\obj\Debug\net8.0\DAL.genruntimeconfig.cache
+C:\DATA\uni\current\DWA\Project\ProjectTask\GrillPizzaOrders\DAL\obj\Debug\net8.0\ref\DAL.dll
