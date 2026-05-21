@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using DAL.DTOs.Order;
+using DAL.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using WebAPI.DTOs.Order;
-using WebAPI.Services;
 
 namespace WebAPI.Controllers
 {

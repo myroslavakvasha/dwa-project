@@ -1,11 +1,11 @@
 using DAL.Models;
+using DAL.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
-using WebAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -80,6 +80,7 @@ builder.Services.AddCors(options =>
         policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 });
 
+builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<LogService>();
 builder.Services.AddScoped<CategoryService>();
 builder.Services.AddScoped<AllergenService>();

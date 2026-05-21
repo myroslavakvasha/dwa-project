@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using DAL.DTOs.Allergen;
+using DAL.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using WebAPI.DTOs.Allergen;
-using WebAPI.Services;
 
 namespace WebAPI.Controllers
 {

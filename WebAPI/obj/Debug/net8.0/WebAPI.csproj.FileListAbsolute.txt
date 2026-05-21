@@ -77,3 +77,6 @@ C:\DATA\uni\current\DWA\Project\ProjectTask\GrillPizzaOrders\WebAPI\obj\Debug\ne
 C:\DATA\uni\current\DWA\Project\ProjectTask\GrillPizzaOrders\WebAPI\obj\Debug\net8.0\WebAPI.genruntimeconfig.cache
 C:\DATA\uni\current\DWA\Project\ProjectTask\GrillPizzaOrders\WebAPI\obj\Debug\net8.0\ref\WebAPI.dll
 C:\DATA\uni\current\DWA\Project\ProjectTask\GrillPizzaOrders\WebAPI\bin\Debug\net8.0\WebAPI.staticwebassets.runtime.json
+C:\DATA\uni\current\DWA\Project\ProjectTask\GrillPizzaOrders\WebAPI\obj\Debug\net8.0\WebAPI.sourcelink.json
+C:\DATA\uni\current\DWA\Project\ProjectTask\GrillPizzaOrders\WebAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\DATA\uni\current\DWA\Project\ProjectTask\GrillPizzaOrders\WebAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll

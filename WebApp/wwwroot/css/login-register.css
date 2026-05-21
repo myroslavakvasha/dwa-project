@@ -1,0 +1,126 @@
+﻿html {
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 460px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 6px 30px rgba(0,0,0,0.08);
+    padding: 28px 36px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+h1 {
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 20px 0;
+    color: #111;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3px;
+}
+
+form label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form input[type="tel"] {
+    width: 100%;
+    padding: 7px 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 13px;
+    color: #111;
+    box-sizing: border-box;
+    background-color: #fafafa;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus,
+form input[type="email"]:focus,
+form input[type="tel"]:focus {
+    outline: none;
+    border-color: darkblue;
+    box-shadow: 0 0 0 3px rgba(0,0,139,0.08);
+    background-color: #fff;
+}
+
+form input[type="submit"] {
+    margin-top: 6px;
+    padding: 9px 0;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: #111;
+    color: #fff;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+form input[type="submit"]:hover {
+    background-color: darkblue;
+}
+
+.field-validation-error {
+    color: #c0392b;
+    font-size: 11px;
+}
+
+.signup-text {
+    text-align: center;
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+.signup-text p {
+    margin: 0;
+}
+
+.signup-text a {
+    text-decoration: none;
+    color: darkblue;
+    font-weight: 600;
+}
+
+.signup-text a:hover {
+    text-decoration: underline;
+}

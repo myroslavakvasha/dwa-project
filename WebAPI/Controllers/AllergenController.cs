@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using WebAPI.DTOs.Allergen;
-using WebAPI.DTOs.Category;
-using WebAPI.Services;
+using DAL.Services;
+using DAL.DTOs.Food;
+using DAL.DTOs.Allergen;
 
 namespace WebAPI.Controllers
 {

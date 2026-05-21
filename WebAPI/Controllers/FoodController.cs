@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using DAL.DTOs.Food;
+using DAL.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using WebAPI.DTOs.Food;
-using WebAPI.Services;
 
 namespace WebAPI.Controllers
 {

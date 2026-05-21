@@ -1,9 +1,9 @@
-﻿using DAL.Models;
+﻿using DAL.DTOs.Log;
+using DAL.Models;
+using DAL.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using WebAPI.DTOs.Log;
-using WebAPI.Services;
 
 namespace WebAPI.Controllers
 {

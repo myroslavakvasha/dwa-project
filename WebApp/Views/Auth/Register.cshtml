@@ -1,0 +1,82 @@
+﻿@model WebApp.Models.RegisterVM
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/login-register.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="form-wrapper">
+        <h1>Register</h1>
+        
+        <form asp-action="Register" method="POST">
+            <div class="field-group">
+                <label asp-for="Username"></label>
+                <span asp-validation-for="Username"></span>
+            </div>
+            <input asp-for="Username" />
+            
+            <div class="field-group">
+                <label asp-for="Password"></label>
+                <span asp-validation-for="Password"></span>
+            </div>
+            <input asp-for="Password" type="password" />
+
+            <div class="field-group">
+                <label asp-for="ConfirmPassword"></label>
+                <span asp-validation-for="ConfirmPassword"></span>
+            </div>
+            <input asp-for="ConfirmPassword" type="password" />
+
+            <div class="field-group">
+                <label asp-for="FirstName"></label>
+                <span asp-validation-for="FirstName"></span>
+            </div>
+            <input asp-for="FirstName" />
+
+            <div class="field-group">
+                <label asp-for="LastName"></label>
+                <span asp-validation-for="LastName"></span>
+            </div>
+            <input asp-for="LastName" />
+
+            <div class="field-group">
+                <label asp-for="Email"></label>
+                <span asp-validation-for="Email"></span>
+            </div>
+            <input asp-for="Email" type="email" />
+
+            <div class="field-group">
+                <label asp-for="Phone"></label>
+                <span asp-validation-for="Phone"></span>
+            </div>
+            <input asp-for="Phone" type="tel" />
+
+            <input type="submit" value="Register" />
+        </form>
+
+        <div class="signup-text">
+            <p>
+                Already have an account?
+                <a asp-controller="Auth" asp-action="Login">Log in</a>
+            </p>
+        </div>
+    </div>
+
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+</body>
+</html>

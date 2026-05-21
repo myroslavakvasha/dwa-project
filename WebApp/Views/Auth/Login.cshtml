@@ -1,0 +1,47 @@
+﻿@model WebApp.Models.LoginVM
+
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <link rel="stylesheet" href="/css/login-register.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="form-wrapper">
+        <h1>Log in</h1>
+        
+        <form asp-action="Login" method="POST">
+            <div class="field-group">
+                <label asp-for="Username"></label>
+                <span asp-validation-for="Username"></span>
+            </div>
+            <input asp-for="Username" />
+            
+            <div class="field-group">
+                <label asp-for="Password"></label>
+                <span asp-validation-for="Password"></span>
+            </div>
+            <input asp-for="Password" type="password" />
+
+            <input type="submit" value="Log in"/>
+        </form>
+
+        <div class="signup-text">
+            <p>
+                Don't have an account yet?
+                <a asp-controller="Auth" asp-action="Register">Sign up</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

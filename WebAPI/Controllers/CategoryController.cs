@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using DAL.DTOs.Category;
+using DAL.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using WebAPI.DTOs.Category;
-using WebAPI.Services;
 
 namespace WebAPI.Controllers
 {

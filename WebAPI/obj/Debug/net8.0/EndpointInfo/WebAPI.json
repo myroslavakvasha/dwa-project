@@ -207,28 +207,6 @@
         }
       }
     },
-    "/api/Auth/genhash/{password}": {
-      "get": {
-        "tags": [
-          "Auth"
-        ],
-        "parameters": [
-          {
-            "name": "password",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/api/Auth/Register": {
       "post": {
         "tags": [
@@ -255,24 +233,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/UserRegisterDto"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UserRegisterDto"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UserRegisterDto"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }

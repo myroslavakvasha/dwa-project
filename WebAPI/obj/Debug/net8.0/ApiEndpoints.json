@@ -9,7 +9,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[WebAPI.DTOs.Allergen.AllergenResponseDto, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[DAL.DTOs.Allergen.AllergenResponseDto, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -29,13 +29,13 @@
     "Parameters": [
       {
         "Name": "createdAllergen",
-        "Type": "WebAPI.DTOs.Allergen.AllergenRequestDto",
+        "Type": "DAL.DTOs.Allergen.AllergenRequestDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "WebAPI.DTOs.Allergen.AllergenResponseDto",
+        "Type": "DAL.DTOs.Allergen.AllergenResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -61,7 +61,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "WebAPI.DTOs.Allergen.AllergenResponseDto",
+        "Type": "DAL.DTOs.Allergen.AllergenResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -86,13 +86,13 @@
       },
       {
         "Name": "updatedAllergen",
-        "Type": "WebAPI.DTOs.Allergen.AllergenRequestDto",
+        "Type": "DAL.DTOs.Allergen.AllergenRequestDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "WebAPI.DTOs.Allergen.AllergenResponseDto",
+        "Type": "DAL.DTOs.Allergen.AllergenResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -128,23 +128,7 @@
     "Parameters": [
       {
         "Name": "userDto",
-        "Type": "WebAPI.DTOs.Auth.UserChangePasswordDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "WebAPI.Controllers.AuthController",
-    "Method": "GenHash",
-    "RelativePath": "api/Auth/genhash/{password}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "password",
-        "Type": "System.String",
+        "Type": "DAL.DTOs.Auth.UserChangePasswordDto",
         "IsRequired": true
       }
     ],
@@ -160,7 +144,7 @@
     "Parameters": [
       {
         "Name": "userDto",
-        "Type": "WebAPI.DTOs.Auth.UserLoginDto",
+        "Type": "DAL.DTOs.Auth.UserLoginDto",
         "IsRequired": true
       }
     ],
@@ -176,21 +160,11 @@
     "Parameters": [
       {
         "Name": "userDto",
-        "Type": "WebAPI.DTOs.Auth.UserRegisterDto",
+        "Type": "DAL.DTOs.Auth.UserRegisterDto",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "WebAPI.DTOs.Auth.UserRegisterDto",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "WebAPI.Controllers.CategoryController",
@@ -202,7 +176,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[WebAPI.DTOs.Category.CategoryResponseDto, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[DAL.DTOs.Category.CategoryResponseDto, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -222,13 +196,13 @@
     "Parameters": [
       {
         "Name": "createdCategory",
-        "Type": "WebAPI.DTOs.Category.CategoryRequestDto",
+        "Type": "DAL.DTOs.Category.CategoryRequestDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "WebAPI.DTOs.Category.CategoryResponseDto",
+        "Type": "DAL.DTOs.Category.CategoryResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -254,7 +228,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "WebAPI.DTOs.Category.CategoryResponseDto",
+        "Type": "DAL.DTOs.Category.CategoryResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -279,13 +253,13 @@
       },
       {
         "Name": "updatedCategory",
-        "Type": "WebAPI.DTOs.Category.CategoryRequestDto",
+        "Type": "DAL.DTOs.Category.CategoryRequestDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "WebAPI.DTOs.Category.CategoryResponseDto",
+        "Type": "DAL.DTOs.Category.CategoryResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -321,7 +295,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[WebAPI.DTOs.Food.FoodResponseDto, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[DAL.DTOs.Food.FoodResponseDto, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -341,13 +315,13 @@
     "Parameters": [
       {
         "Name": "createdFood",
-        "Type": "WebAPI.DTOs.Food.FoodRequestDto",
+        "Type": "DAL.DTOs.Food.FoodRequestDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "WebAPI.DTOs.Food.FoodResponseDto",
+        "Type": "DAL.DTOs.Food.FoodResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -373,7 +347,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "WebAPI.DTOs.Food.FoodResponseDto",
+        "Type": "DAL.DTOs.Food.FoodResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -398,13 +372,13 @@
       },
       {
         "Name": "updatedFood",
-        "Type": "WebAPI.DTOs.Food.FoodRequestDto",
+        "Type": "DAL.DTOs.Food.FoodRequestDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "WebAPI.DTOs.Food.FoodResponseDto",
+        "Type": "DAL.DTOs.Food.FoodResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -461,7 +435,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[WebAPI.DTOs.Food.FoodResponseDto, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[DAL.DTOs.Food.FoodResponseDto, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -529,7 +503,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[WebAPI.DTOs.Allergen.AllergenResponseDto, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[DAL.DTOs.Allergen.AllergenResponseDto, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -575,7 +549,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[WebAPI.DTOs.Log.LogResponseDto, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[DAL.DTOs.Log.LogResponseDto, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -595,7 +569,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[WebAPI.DTOs.Order.OrderResponseDto, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[DAL.DTOs.Order.OrderResponseDto, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -615,13 +589,13 @@
     "Parameters": [
       {
         "Name": "createdOrder",
-        "Type": "WebAPI.DTOs.Order.OrderRequestDto",
+        "Type": "DAL.DTOs.Order.OrderRequestDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "WebAPI.DTOs.Order.OrderDetailResponseDto",
+        "Type": "DAL.DTOs.Order.OrderDetailResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -647,7 +621,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "WebAPI.DTOs.Order.OrderDetailResponseDto",
+        "Type": "DAL.DTOs.Order.OrderDetailResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -683,7 +657,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[WebAPI.DTOs.Order.OrderResponseDto, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[DAL.DTOs.Order.OrderResponseDto, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

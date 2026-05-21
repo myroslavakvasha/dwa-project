@@ -12,3 +12,4 @@ C:\DATA\uni\current\DWA\Project\ProjectTask\GrillPizzaOrders\DAL\obj\Debug\net8.
 C:\DATA\uni\current\DWA\Project\ProjectTask\GrillPizzaOrders\DAL\obj\Debug\net8.0\DAL.pdb
 C:\DATA\uni\current\DWA\Project\ProjectTask\GrillPizzaOrders\DAL\obj\Debug\net8.0\DAL.genruntimeconfig.cache
 C:\DATA\uni\current\DWA\Project\ProjectTask\GrillPizzaOrders\DAL\obj\Debug\net8.0\ref\DAL.dll
+C:\DATA\uni\current\DWA\Project\ProjectTask\GrillPizzaOrders\DAL\obj\Debug\net8.0\DAL.sourcelink.json
