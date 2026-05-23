@@ -1,5 +1,5 @@
 <Solution>
-  <Project Path="DAL/DAL.csproj" />
+  <Project Path="BL/BL.csproj" />
   <Project Path="WebAPI/WebAPI.csproj" />
   <Project Path="WebApp/WebApp.csproj" Id="95ec8d96-9284-4e04-b1c9-82bfeefda5bc" />
 </Solution>

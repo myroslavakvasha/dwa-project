@@ -1,5 +1,5 @@
-﻿using DAL.DTOs.Order;
-using DAL.Services;
+﻿using BL.DTOs.Order;
+using BL.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

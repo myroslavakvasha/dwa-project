@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
-using DAL.DTOs.Auth;
-using WebApp.Models;
+using BL.DTOs.Auth;
+using BL.DTOs.Food;
+using WebApp.Models.Auth;
+using WebApp.Models.Food;
 
 namespace WebApp.Profiles
 {
@@ -9,6 +11,7 @@ namespace WebApp.Profiles
         public MappingProfile()
         {
             CreateMap<RegisterVM, UserRegisterDto>();
+            CreateMap<FoodResponseDto, FoodRowVM>();
         }
     }
 }

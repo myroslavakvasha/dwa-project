@@ -1,5 +1,5 @@
-﻿using DAL.DTOs.Allergen;
-using DAL.Services;
+﻿using BL.DTOs.Allergen;
+using BL.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

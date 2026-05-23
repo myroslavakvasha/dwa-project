@@ -1,5 +1,5 @@
-using DAL.Models;
-using DAL.Services;
+using BL.Models;
+using BL.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using WebApp.Profiles;

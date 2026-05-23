@@ -4534,7 +4534,7 @@
   const CLASS_NAME_SHOW$4 = 'show';
   const CLASS_NAME_STATIC = 'modal-static';
   const SELECTOR_DIALOG = '.modal-dialog';
-  const SELECTOR_MODAL_BODY = '.modal-body';
+  const SELECTOR_MOBL_BODY = '.modal-body';
   const SELECTOR_DATA_TOGGLE$2 = '[data-bs-toggle="modal"]';
   /**
    * ------------------------------------------------------------------------
@@ -4683,7 +4683,7 @@
     _showElement(relatedTarget) {
       const isAnimated = this._isAnimated();
 
-      const modalBody = SelectorEngine.findOne(SELECTOR_MODAL_BODY, this._dialog);
+      const modalBody = SelectorEngine.findOne(SELECTOR_MOBL_BODY, this._dialog);
 
       if (!this._element.parentNode || this._element.parentNode.nodeType !== Node.ELEMENT_NODE) {
         // Don't move modal's DOM position
@@ -5356,13 +5356,13 @@
     MOUSELEAVE: `mouseleave${EVENT_KEY$4}`
   };
   const CLASS_NAME_FADE$2 = 'fade';
-  const CLASS_NAME_MODAL = 'modal';
+  const CLASS_NAME_MOBL = 'modal';
   const CLASS_NAME_SHOW$2 = 'show';
   const HOVER_STATE_SHOW = 'show';
   const HOVER_STATE_OUT = 'out';
   const SELECTOR_TOOLTIP_INNER = '.tooltip-inner';
-  const SELECTOR_MODAL = `.${CLASS_NAME_MODAL}`;
-  const EVENT_MODAL_HIDE = 'hide.bs.modal';
+  const SELECTOR_MOBL = `.${CLASS_NAME_MOBL}`;
+  const EVENT_MOBL_HIDE = 'hide.bs.modal';
   const TRIGGER_HOVER = 'hover';
   const TRIGGER_FOCUS = 'focus';
   const TRIGGER_CLICK = 'click';
@@ -5451,7 +5451,7 @@
 
     dispose() {
       clearTimeout(this._timeout);
-      EventHandler.off(this._element.closest(SELECTOR_MODAL), EVENT_MODAL_HIDE, this._hideModalHandler);
+      EventHandler.off(this._element.closest(SELECTOR_MOBL), EVENT_MOBL_HIDE, this._hideModalHandler);
 
       if (this.tip) {
         this.tip.remove();
@@ -5781,7 +5781,7 @@
         }
       };
 
-      EventHandler.on(this._element.closest(SELECTOR_MODAL), EVENT_MODAL_HIDE, this._hideModalHandler);
+      EventHandler.on(this._element.closest(SELECTOR_MOBL), EVENT_MOBL_HIDE, this._hideModalHandler);
 
       if (this._config.selector) {
         this._config = { ...this._config,

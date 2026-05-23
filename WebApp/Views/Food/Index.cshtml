@@ -1,0 +1,122 @@
+﻿@model WebApp.Models.Food.FoodIndexVM;
+
+@{
+	ViewData["Title"] = "Food list";
+}
+
+<h1>Availible foods</h1>
+
+<form asp-action="Index" method="GET">
+	<div class="row">
+		<div class="col-8">
+			<input asp-for="Q" class="form-control" placeholder="Search food" />
+		</div>
+	</div>
+	<div class="col-auto">
+		<select asp-for="CategoryId" asp-items="Model.Categories" class="form-select">
+			<option value="">-- All categories --</option>
+		</select>
+	</div>
+	<div class="col-auto">
+		<input type="submit" value="Go" name="submit" class="btn btn-primary" />
+	</div>
+	<div class="col-auto">
+		<select asp-for="Size" class="form-select">
+			<option>10</option>
+			<option>20</option>
+			<option>50</option>
+		</select>
+	</div>
+	<div class="col-auto">
+		<input type="submit" value="Go" name="submit" class="btn btn-primary" />
+	</div>
+</form>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Foods.FirstOrDefault().Name)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Foods.FirstOrDefault().Description)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Foods.FirstOrDefault().CategoryName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Foods.FirstOrDefault().Weight)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Foods.FirstOrDefault().Price)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model.Foods)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Name)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Description)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.CategoryName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Weight)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Price)
+				</td>
+				<td>
+					@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-outline-primary" })
+					@Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-outline-danger" })
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+<p>
+	<a asp-action="Create" class="btn btn-outline-primary">Create New</a>
+</p>
+
+<nav>
+	<ul class="pagination">
+		@for (int i = Model.FromPager; i <= Model.ToPager; i++)
+		{
+			var linkText = @i.ToString();
+			if (i != 1 && i == Model.FromPager)
+			{
+				linkText = "«";
+			}
+			else if (i != Model.LastPage && i == Model.ToPager)
+			{
+				linkText = "»";
+			}
+
+			var linkClass = "page-item";
+			if (i == Model.Page)
+			{
+				linkClass = "page-item active";
+			}
+			<li class="@linkClass">
+				@Html.ActionLink(
+					@linkText,
+					"Index",
+					new
+					{
+						q = Model.Q,
+						categoryId = Model.CategoryId,
+						page = i,
+						size = Model.Size
+					},
+					new { @class = "page-link" })
+			</li>
+		}
+	</ul>
+</nav>

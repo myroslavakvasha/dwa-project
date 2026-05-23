@@ -1,6 +1,6 @@
-﻿using DAL.DTOs.Auth;
-using DAL.Models;
-using DAL.Services;
+﻿using BL.DTOs.Auth;
+using BL.Models;
+using BL.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

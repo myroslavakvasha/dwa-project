@@ -1,5 +1,5 @@
-﻿using DAL.DTOs.Food;
-using DAL.Services;
+﻿using BL.DTOs.Food;
+using BL.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
