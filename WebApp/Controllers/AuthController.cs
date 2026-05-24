@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
-using WebApp.Models.Auth;
+using WebApp.ViewModels.Auth;
 
 namespace WebApp.Controllers
 {
@@ -99,6 +99,11 @@ namespace WebApp.Controllers
                 return View(registerVM);
             }
         }
-          
+
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Login", "Auth");
+        }
     }
 }

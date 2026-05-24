@@ -42,7 +42,7 @@ namespace BL.Services
 
         public FoodResponseDto GetById(int id)
         {
-            Food? food = _context.Foods.Include(x => x.Allergens).FirstOrDefault(x => x.Id == id);
+            Food? food = _context.Foods.Include(x => x.Allergens).Include(x => x.Category).FirstOrDefault(x => x.Id == id);
             if (food == null)
             {
                 _logService.LogAction("ERROR", $"Cannot find food with id={id}");
@@ -54,6 +54,7 @@ namespace BL.Services
                 Id = food.Id,
                 Name = food.Name,
                 CategoryId = food.CategoryId,
+                CategoryName = food.Category.Name,
                 Weight = food.Weight,
                 Price = food.Price,
                 Description = food.Description,

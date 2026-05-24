@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace WebApp.Models.Food
+namespace WebApp.ViewModels.Food
 {
     public class FoodIndexVM
     {

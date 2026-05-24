@@ -1,0 +1,28 @@
+﻿@model WebApp.ViewModels.Allergen.AllergenVM;
+
+@{
+    ViewData["Title"] = "Delete allergen";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="/css/delete.css" />
+}
+
+<div class="delete-wrapper">
+    <div class="delete-card">
+        <h1>Delete Allergen</h1>
+        <p class="delete-warning">Are you sure you want to delete this item? This action cannot be undone.</p>
+
+        <div class="delete-field">
+            <span class="delete-label">@Html.DisplayNameFor(m => m.Name)</span>
+            <span class="delete-value">@Html.DisplayFor(m => m.Name)</span>
+        </div>
+
+        <div class="delete-actions">
+            <a asp-action="Index" class="btn-cancel">Cancel</a>
+            <form asp-action="Delete" method="post">
+                <input type="submit" value="Delete" class="btn-danger" />
+            </form>
+        </div>
+    </div>
+</div>  

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WebApp.Models.Food
+namespace WebApp.ViewModels.Food
 {
     public class FoodRowVM
     {

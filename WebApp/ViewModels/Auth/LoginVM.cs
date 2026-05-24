@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WebApp.Models.Auth
+namespace WebApp.ViewModels.Auth
 {
     public class LoginVM
     {

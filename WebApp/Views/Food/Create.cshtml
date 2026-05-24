@@ -1,0 +1,66 @@
+﻿@model WebApp.ViewModels.Food.FoodFormVM;
+
+@{
+	ViewData["Title"] = "Create new food";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="/css/form.css" />
+}
+
+<div class="food-form-wrapper">
+    <div class="food-form-container">
+        <h1>Food Management</h1>
+        <h2>Add New Food</h2>
+
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="food-form-grid">
+
+                <div class="food-form-group">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" />
+                    <span asp-validation-for="Name" class="field-validation-error"></span>
+                </div>
+
+                <div class="food-form-group">
+                    <label asp-for="Price"></label>
+                    <input asp-for="Price" />
+                    <span asp-validation-for="Price" class="field-validation-error"></span>
+                </div>
+
+                <div class="food-form-group">
+                    <label asp-for="CategoryId"></label>
+                    <select asp-for="CategoryId" asp-items="@Model.Categories">
+                        <option value="">(not selected)</option>
+                    </select>
+                    <span asp-validation-for="CategoryId" class="field-validation-error"></span>
+                </div>
+
+                <div class="food-form-group">
+                    <label asp-for="Weight"></label>
+                    <input asp-for="Weight" />
+                    <span asp-validation-for="Weight" class="field-validation-error"></span>
+                </div>
+
+                <div class="food-form-group field-full">
+                    <label asp-for="Description"></label>
+                    <textarea asp-for="Description"></textarea>
+                    <span asp-validation-for="Description" class="field-validation-error"></span>
+                </div>
+
+            </div>
+
+            <div class="food-form-actions">
+                <a asp-action="Index" class="btn-cancel">Cancel</a>
+                <input type="submit" value="Save" class="btn-save" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

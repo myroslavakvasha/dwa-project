@@ -2,7 +2,7 @@ using BL.Models;
 using BL.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
-using WebApp.Profiles;
+using WebApp.Mapping;
 
 var builder = WebApplication.CreateBuilder(args);
 

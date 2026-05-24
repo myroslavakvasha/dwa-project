@@ -1,0 +1,44 @@
+﻿@model WebApp.ViewModels.Food.FoodRowVM;
+
+@{
+    ViewData["Title"] = "Delete food";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="/css/delete.css" />
+}
+
+<div class="delete-wrapper">
+    <div class="delete-card">
+        <h1>Delete Food</h1>
+        <p class="delete-warning">Are you sure you want to delete this item? This action cannot be undone.</p>
+
+        <div class="delete-field">
+            <span class="delete-label">@Html.DisplayNameFor(m => m.Name)</span>
+            <span class="delete-value">@Html.DisplayFor(m => m.Name)</span>
+        </div>
+        <div class="delete-field">
+            <span class="delete-label">@Html.DisplayNameFor(m => m.CategoryName)</span>
+            <span class="delete-value">@Html.DisplayFor(m => m.CategoryName)</span>
+        </div>
+        <div class="delete-field">
+            <span class="delete-label">@Html.DisplayNameFor(m => m.Price)</span>
+            <span class="delete-value">@Model.Price.ToString("0.00")</span>
+        </div>
+        <div class="delete-field">
+            <span class="delete-label">@Html.DisplayNameFor(m => m.Weight)</span>
+            <span class="delete-value">@Html.DisplayFor(m => m.Weight)</span>
+        </div>
+        <div class="delete-field">
+            <span class="delete-label">@Html.DisplayNameFor(m => m.Description)</span>
+            <span class="delete-value">@Html.DisplayFor(m => m.Description)</span>
+        </div>
+
+        <div class="delete-actions">
+            <a asp-action="Index" class="btn-cancel">Cancel</a>
+            <form asp-action="Delete" method="post">
+                <input type="submit" value="Delete" class="btn-danger" />
+            </form>
+        </div>
+    </div>
+</div>  

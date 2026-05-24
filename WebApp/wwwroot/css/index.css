@@ -1,0 +1,266 @@
+﻿.food-index-container {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 32px 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.food-toolbar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.food-search-input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 13px;
+    background-color: #fafafa;
+    transition: border-color 0.2s;
+}
+
+    .food-search-input:focus {
+        outline: none;
+        border-color: darkblue;
+        box-shadow: 0 0 0 3px rgba(0,0,139,0.08);
+        background-color: #fff;
+    }
+
+.food-category-select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 13px;
+    background-color: #fafafa;
+    cursor: pointer;
+    min-width: 160px;
+}
+
+    .food-category-select:focus {
+        outline: none;
+        border-color: darkblue;
+    }
+
+.btn-search {
+    padding: 8px 20px;
+    background-color: #111;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+    .btn-search:hover {
+        background-color: darkblue;
+    }
+
+.food-size-bar {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.size-link {
+    color: #111;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0 2px;
+}
+
+    .size-link:hover {
+        color: darkblue;
+    }
+
+    .size-link.active {
+        color: darkblue;
+        text-decoration: underline;
+    }
+
+.food-list {
+    border-top: 2px solid #111;
+}
+
+.food-row {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+    gap: 16px;
+    transition: background-color 0.15s;
+}
+
+.food-row-desc {
+    flex: 2;
+    font-size: 12px;
+    color: #777;
+    padding: 0 16px;
+}
+
+    .food-row:hover {
+        background-color: #f9f9f9;
+    }
+
+.food-row-name {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 600;
+    color: #111;
+}
+
+.food-row-meta {
+    font-size: 12px;
+    color: #666;
+    min-width: 160px;
+    text-align: right;
+}
+
+.food-row-actions {
+    display: flex;
+    gap: 8px;
+    margin-left: 16px;
+}
+
+.food-list-header {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 16px;
+    border-bottom: 2px solid #111;
+}
+
+.food-list-header span {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #555;
+}
+
+.food-list-header span:first-child {
+    flex: 1;
+}
+
+.food-list-header span:nth-child(2) {
+    flex: 2;
+    padding: 0 16px;
+}
+
+.food-list-header span:nth-child(3) {
+    min-width: 160px;
+    text-align: right;
+}
+
+.food-list-header span:nth-child(4) {
+    width: 140px;
+    margin-left: 16px;
+}
+
+.btn-edit {
+    padding: 5px 14px;
+    font-size: 12px;
+    font-family: inherit;
+    font-weight: 600;
+    border: 1px solid #111;
+    border-radius: 4px;
+    color: #111;
+    background: #fff;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+    .btn-edit:hover {
+        background-color: #111;
+        color: #fff;
+        text-decoration: none;
+    }
+
+.btn-delete {
+    padding: 5px 14px;
+    font-size: 12px;
+    font-family: inherit;
+    font-weight: 600;
+    border: 1px solid #c0392b;
+    border-radius: 4px;
+    color: #c0392b;
+    background: #fff;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+    .btn-delete:hover {
+        background-color: #c0392b;
+        color: #fff;
+        text-decoration: none;
+    }
+
+.food-bottom-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.food-pagination {
+    display: flex;
+    gap: 4px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .food-pagination .page-item .page-link {
+        display: inline-block;
+        padding: 5px 11px;
+        font-size: 13px;
+        font-family: inherit;
+        font-weight: 600;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        color: #111;
+        text-decoration: none;
+        transition: background-color 0.2s, border-color 0.2s;
+    }
+
+        .food-pagination .page-item .page-link:hover {
+            border-color: darkblue;
+            color: darkblue;
+        }
+
+    .food-pagination .page-item.active .page-link {
+        background-color: #111;
+        border-color: #111;
+        color: #fff;
+    }
+
+.btn-create {
+    padding: 8px 20px;
+    background-color: #111;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    display: inline-block;
+}
+
+
+    .btn-create:hover {
+        background-color: darkblue;
+        text-decoration: none;
+        color: #fff;
+    }

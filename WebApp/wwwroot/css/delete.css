@@ -1,0 +1,101 @@
+﻿.delete-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 48px 20px;
+    min-height: calc(100vh - 60px);
+    align-items: center;
+}
+
+.delete-card {
+    width: 100%;
+    max-width: 560px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 6px 30px rgba(0,0,0,0.08);
+    padding: 32px 36px;
+    background-color: #fff;
+}
+
+    .delete-card h1 {
+        font-size: 20px;
+        font-weight: 700;
+        color: #111;
+        margin: 0 0 8px 0;
+    }
+
+.delete-warning {
+    font-size: 13px;
+    color: #c0392b;
+    margin: 0 0 24px 0;
+}
+
+.delete-field {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    gap: 16px;
+}
+
+.delete-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #555;
+    min-width: 100px;
+}
+
+.delete-value {
+    font-size: 13px;
+    color: #111;
+    text-align: right;
+    flex: 1;
+}
+
+.delete-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-top: 28px;
+}
+
+    .delete-actions form {
+        margin: 0;
+    }
+
+.btn-cancel {
+    padding: 8px 24px;
+    background-color: #fff;
+    color: #111;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: border-color 0.2s;
+}
+
+    .btn-cancel:hover {
+        border-color: darkblue;
+        color: darkblue;
+        text-decoration: none;
+    }
+
+.btn-danger {
+    padding: 8px 24px;
+    background-color: #c0392b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+    .btn-danger:hover {
+        background-color: #922b21;
+    }

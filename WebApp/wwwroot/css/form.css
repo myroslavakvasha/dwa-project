@@ -1,0 +1,128 @@
+﻿.food-form-container {
+    max-width: 900px;
+    width: 100%;
+    padding: 24px 0;
+}
+
+    .food-form-container h1 {
+        font-size: 13px;
+        font-weight: 400;
+        color: #666;
+        margin: 0 0 4px 0;
+    }
+
+    .food-form-container h2 {
+        font-size: 20px;
+        font-weight: 700;
+        color: #111;
+        margin: 0 0 24px 0;
+    }
+
+.food-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 32px;
+    row-gap: 0;
+}
+
+    .food-form-grid .field-full {
+        grid-column: 1 / -1;
+    }
+
+.food-form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
+}
+
+    .food-form-group label {
+        font-size: 12px;
+        font-weight: 700;
+        color: #111;
+        margin-bottom: 4px;
+    }
+
+    .food-form-group input[type="text"],
+    .food-form-group input[type="number"],
+    .food-form-group select,
+    .food-form-group textarea {
+        padding: 6px 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-family: inherit;
+        font-size: 13px;
+        color: #111;
+        background-color: #fafafa;
+        transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+        .food-form-group input:focus,
+        .food-form-group select:focus,
+        .food-form-group textarea:focus {
+            outline: none;
+            border-color: darkblue;
+            box-shadow: 0 0 0 3px rgba(0,0,139,0.08);
+            background-color: #fff;
+        }
+
+    .food-form-group textarea {
+        resize: vertical;
+        min-height: 90px;
+    }
+
+.food-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #eee;
+}
+
+    .food-form-actions .btn-save {
+        padding: 8px 24px;
+        background-color: #111;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-family: inherit;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+
+        .food-form-actions .btn-save:hover {
+            background-color: darkblue;
+        }
+
+    .food-form-actions .btn-cancel {
+        padding: 8px 24px;
+        background-color: #fff;
+        color: #111;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-family: inherit;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        transition: border-color 0.2s;
+    }
+
+        .food-form-actions .btn-cancel:hover {
+            border-color: darkblue;
+            color: darkblue;
+        }
+
+.field-validation-error {
+    color: #c0392b;
+    font-size: 11px;
+    margin-top: 2px;
+}
+
+.food-form-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}

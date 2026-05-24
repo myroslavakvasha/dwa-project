@@ -1,0 +1,37 @@
+﻿@model IEnumerable<WebApp.ViewModels.Allergen.AllergenVM>;
+
+@{
+    ViewData["Title"] = "Allergen list";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="/css/index.css" />
+}
+
+<div class="food-index-container">
+    <div class="food-bottom-bar" style="margin-bottom: 24px; margin-top: 8px;">
+        <div>
+            <h1 style="margin:0; font-size: 22px; font-weight: 700;">Allergen Management</h1>
+            <p style="margin: 4px 0 0 0; font-size: 13px; color: #666;">Manage food allergens</p>
+        </div>
+        <a asp-action="Create" class="btn-create">Add Allergen</a>
+    </div>
+
+    <div class="food-list-header">
+        <span>Name</span>
+        <span></span>
+    </div>
+
+    <div class="food-list">
+        @foreach (var item in Model)
+        {
+            <div class="food-row">
+                <span class="food-row-name">@item.Name</span>
+                <div class="food-row-actions">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn-edit" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn-delete" })
+                </div>
+            </div>
+        }
+    </div>
+</div>
