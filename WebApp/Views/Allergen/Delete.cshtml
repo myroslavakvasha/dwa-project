@@ -13,6 +13,8 @@
         <h1>Delete Allergen</h1>
         <p class="delete-warning">Are you sure you want to delete this item? This action cannot be undone.</p>
 
+        <div asp-validation-summary="ModelOnly" class="delete-warning"></div>
+
         <div class="delete-field">
             <span class="delete-label">@Html.DisplayNameFor(m => m.Name)</span>
             <span class="delete-value">@Html.DisplayFor(m => m.Name)</span>
@@ -21,6 +23,7 @@
         <div class="delete-actions">
             <a asp-action="Index" class="btn-cancel">Cancel</a>
             <form asp-action="Delete" method="post">
+                <input type="hidden" asp-for="Id" />
                 <input type="submit" value="Delete" class="btn-danger" />
             </form>
         </div>

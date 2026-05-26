@@ -13,6 +13,8 @@
         <h1>Delete Category</h1>
         <p class="delete-warning">Are you sure you want to delete this item? This action cannot be undone.</p>
 
+        <div asp-validation-summary="ModelOnly" class="delete-warning"></div>
+
         <div class="delete-field">
             <span class="delete-label">@Html.DisplayNameFor(m => m.Name)</span>
             <span class="delete-value">@Html.DisplayFor(m => m.Name)</span>

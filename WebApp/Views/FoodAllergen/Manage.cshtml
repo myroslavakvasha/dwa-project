@@ -1,0 +1,82 @@
+﻿@model WebApp.ViewModels.FoodAllergenVM
+
+@{
+	ViewData["Title"] = "Manage allergens";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/form.css" />
+}
+
+<div class="food-index-container">
+
+    <div class="food-bottom-bar" style="margin-bottom: 24px; margin-top: 8px;">
+        <div>
+            <h1 style="margin:0; font-size: 22px; font-weight: 700;">Allergen Management</h1>
+            <p style="margin: 4px 0 0 0; font-size: 13px; color: #666;">@Model.FoodName</p>
+        </div>
+        <a asp-controller="Food" asp-action="Index" class="btn-create">Back to Foods</a>
+    </div>
+
+    <div class="food-list-header">
+        <span>Allergen</span>
+        <span></span>
+    </div>
+
+    <div class="food-list">
+        @if (!Model.AssignedAllergens.Any())
+        {
+            <div class="food-row">
+                <span class="food-row-name" style="color: #aaa; font-weight: 400;">No allergens assigned</span>
+            </div>
+        }
+        else
+        {
+            foreach (var allergen in Model.AssignedAllergens)
+            {
+                <div class="food-row">
+                    <span class="food-row-name">@allergen.Name</span>
+                    <div class="food-row-actions">
+                        <form asp-action="RemoveAllergen" method="post" style="margin:0;">
+                            <input type="hidden" name="foodId" value="@Model.FoodId" />
+                            <input type="hidden" name="allergenId" value="@allergen.Id" />
+                            <input type="submit" value="Remove" class="btn-delete" />
+                        </form>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+
+    @if (Model.AvailableAllergens != null && Model.AvailableAllergens.Any())
+    {
+        <div class="food-form-container" style="margin-top: 32px; padding: 0;">
+            <h2 style="font-size: 15px; font-weight: 700; margin: 0 0 14px 0;">Add Allergen</h2>
+            <form asp-action="AddAllergen" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" name="foodId" value="@Model.FoodId" />
+                <div class="food-form-group" style="max-width: 340px;">
+                    <select asp-for="SelectedAllergenId" asp-items="Model.AvailableAllergens">
+                        <option value="">(select allergen)</option>
+                    </select>
+                    <span asp-validation-for="SelectedAllergenId" class="field-validation-error"></span>
+                </div>
+                <div class="food-form-actions" style="justify-content: flex-start; margin-top: 12px;">
+                    <input type="submit" value="Add" class="btn-save" />
+                </div>
+            </form>
+        </div>
+    }
+    else
+    {
+        <p style="margin-top: 20px; font-size: 13px; color: #aaa;">All allergens are already assigned.</p>
+    }
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

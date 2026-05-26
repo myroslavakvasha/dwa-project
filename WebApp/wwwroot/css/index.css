@@ -24,12 +24,12 @@
     transition: border-color 0.2s;
 }
 
-    .food-search-input:focus {
-        outline: none;
-        border-color: darkblue;
-        box-shadow: 0 0 0 3px rgba(0,0,139,0.08);
-        background-color: #fff;
-    }
+.food-search-input:focus {
+    outline: none;
+    border-color: darkblue;
+    box-shadow: 0 0 0 3px rgba(0,0,139,0.08);
+    background-color: #fff;
+}
 
 .food-category-select {
     padding: 8px 12px;
@@ -42,10 +42,10 @@
     min-width: 160px;
 }
 
-    .food-category-select:focus {
-        outline: none;
-        border-color: darkblue;
-    }
+.food-category-select:focus {
+    outline: none;
+    border-color: darkblue;
+}
 
 .btn-search {
     padding: 8px 20px;
@@ -60,9 +60,9 @@
     transition: background-color 0.2s;
 }
 
-    .btn-search:hover {
-        background-color: darkblue;
-    }
+.btn-search:hover {
+    background-color: darkblue;
+}
 
 .food-size-bar {
     font-size: 12px;
@@ -78,14 +78,14 @@
     padding: 0 2px;
 }
 
-    .size-link:hover {
-        color: darkblue;
-    }
+.size-link:hover {
+    color: darkblue;
+}
 
-    .size-link.active {
-        color: darkblue;
-        text-decoration: underline;
-    }
+.size-link.active {
+    color: darkblue;
+    text-decoration: underline;
+}
 
 .food-list {
     border-top: 2px solid #111;
@@ -107,9 +107,9 @@
     padding: 0 16px;
 }
 
-    .food-row:hover {
-        background-color: #f9f9f9;
-    }
+.food-row:hover {
+    background-color: #f9f9f9;
+}
 
 .food-row-name {
     flex: 1;
@@ -129,6 +129,8 @@
     display: flex;
     gap: 8px;
     margin-left: 16px;
+    width: 240px;
+    justify-content: flex-end;
 }
 
 .food-list-header {
@@ -162,8 +164,9 @@
 }
 
 .food-list-header span:nth-child(4) {
-    width: 140px;
+    width: 240px;
     margin-left: 16px;
+    text-align: right;
 }
 
 .btn-edit {
@@ -179,11 +182,11 @@
     transition: background-color 0.2s, color 0.2s;
 }
 
-    .btn-edit:hover {
-        background-color: #111;
-        color: #fff;
-        text-decoration: none;
-    }
+.btn-edit:hover {
+    background-color: #111;
+    color: #fff;
+    text-decoration: none;
+}
 
 .btn-delete {
     padding: 5px 14px;
@@ -198,11 +201,11 @@
     transition: background-color 0.2s, color 0.2s;
 }
 
-    .btn-delete:hover {
-        background-color: #c0392b;
-        color: #fff;
-        text-decoration: none;
-    }
+.btn-delete:hover {
+    background-color: #c0392b;
+    color: #fff;
+    text-decoration: none;
+}
 
 .food-bottom-bar {
     display: flex;
@@ -219,29 +222,29 @@
     margin: 0;
 }
 
-    .food-pagination .page-item .page-link {
-        display: inline-block;
-        padding: 5px 11px;
-        font-size: 13px;
-        font-family: inherit;
-        font-weight: 600;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        color: #111;
-        text-decoration: none;
-        transition: background-color 0.2s, border-color 0.2s;
-    }
+.food-pagination .page-item .page-link {
+    display: inline-block;
+    padding: 5px 11px;
+    font-size: 13px;
+    font-family: inherit;
+    font-weight: 600;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #111;
+    text-decoration: none;
+    transition: background-color 0.2s, border-color 0.2s;
+}
 
-        .food-pagination .page-item .page-link:hover {
-            border-color: darkblue;
-            color: darkblue;
-        }
+.food-pagination .page-item .page-link:hover {
+    border-color: darkblue;
+    color: darkblue;
+}
 
-    .food-pagination .page-item.active .page-link {
-        background-color: #111;
-        border-color: #111;
-        color: #fff;
-    }
+.food-pagination .page-item.active .page-link {
+    background-color: #111;
+    border-color: #111;
+    color: #fff;
+}
 
 .btn-create {
     padding: 8px 20px;
@@ -259,8 +262,27 @@
 }
 
 
-    .btn-create:hover {
-        background-color: darkblue;
-        text-decoration: none;
-        color: #fff;
-    }
+.btn-create:hover {
+    background-color: darkblue;
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn-allergen {
+    padding: 5px 14px;
+    font-size: 12px;
+    font-family: inherit;
+    font-weight: 600;
+    border: 1px solid #2c3e50; /* Deep steel blue/grey */
+    border-radius: 4px;
+    color: #2c3e50;
+    background: #fff;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-allergen:hover {
+    background-color: #2c3e50;
+    color: #fff;
+    text-decoration: none;
+}

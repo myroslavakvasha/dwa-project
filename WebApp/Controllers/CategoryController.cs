@@ -5,6 +5,7 @@ using BL.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using WebApp.ViewModels.Allergen;
 using WebApp.ViewModels.Category;
 
 namespace WebApp.Controllers
@@ -118,6 +119,12 @@ namespace WebApp.Controllers
             {
                 _service.Delete(id);
                 return RedirectToAction(nameof(Index));
+            }
+            catch (InvalidOperationException ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+                var categoryVM = _mapper.Map<CategoryVM>(_service.GetById(id));
+                return View("Delete", categoryVM);
             }
             catch (Exception ex)
             {

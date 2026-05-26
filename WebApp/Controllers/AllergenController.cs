@@ -121,6 +121,12 @@ namespace WebApp.Controllers
                 _service.Delete(id);
                 return RedirectToAction(nameof(Index));
             }
+            catch(InvalidOperationException ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+                var allergenVM = _mapper.Map<AllergenVM>(_service.GetById(id));
+                return View("Delete", allergenVM);
+            }
             catch (Exception ex)
             {
                 return View("Error", ex.Message);

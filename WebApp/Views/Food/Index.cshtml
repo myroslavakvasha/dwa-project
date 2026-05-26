@@ -27,10 +27,12 @@
     </form>
 
     <div class="food-list-header">
+        @* can be done by reading annotations but doesnt make sense here ig *@
+        @* <span>@Html.DisplayNameFor(x => x.Foods.First().CategoryName)</span> *@
         <span>Name</span>
         <span>Description</span>
         <span>Category — Price — Weight</span>
-        <span></span>
+        <span>Management</span>
     </div>
 
     <div class="food-list">
@@ -39,10 +41,12 @@
             <div class="food-row">
                 <span class="food-row-name">@item.Name</span>
                 <span class="food-row-desc">@item.Description</span>
-                <span class="food-row-meta">@item.CategoryName — €@item.Price.ToString("0.00") — @item.Weight<text>g</text></span>
+                <span class="food-row-meta">@item.CategoryName — €@item.Price.ToString("0.00") — @item.Weight g</span>
+    
                 <div class="food-row-actions">
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn-edit" })
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn-delete" })
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn-edit">Edit</a>
+                    <a asp-controller="FoodAllergen" asp-action="Manage" asp-route-foodId="@item.Id" class="btn-allergen">Allergens</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn-delete">Delete</a>
                 </div>
             </div>
         }

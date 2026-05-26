@@ -56,6 +56,12 @@ namespace BL.Services
                 throw new Exception("No allergen with such Id exists");
             }
 
+            if (_context.Allergens.Any(x => x.Name == updatedCAllergen.Name && x.Id != id))
+            {
+                _logService.LogAction("ERROR", $"Attempt to update allergen {updatedCAllergen.Name} (same allergen already exists).");
+                throw new Exception("Allergen already exists");
+            }
+
             allergen.Id = id;
             allergen.Name = updatedCAllergen.Name;
 
@@ -68,18 +74,20 @@ namespace BL.Services
 
         public void Delete(int id)
         {
-            Allergen? allergen = _context.Allergens.FirstOrDefault(x => x.Id == id);
+            Allergen? allergen = _context.Allergens.Include(x => x.Foods).FirstOrDefault(x => x.Id == id);
             if (allergen == null)
             {
                 _logService.LogAction("ERROR", $"Attempt to delete non-existing allergen with id={id}.");
                 throw new Exception("No allergen with such Id exists");
             }
 
-            //if (allergen.Foods.Any())
-            //{
-            //    _logService.LogAction("ERROR", $"Cannot delete allergen with id={id} (FK constraint).");
-            //    throw new InvalidOperationException("Allergen is assigned to a food");
-            //}
+            //allergen.Foods.Clear();
+
+            if (allergen.Foods.Any())
+            {
+                _logService.LogAction("ERROR", $"Cannot delete allergen with id={id} (FK constraint).");
+                throw new InvalidOperationException("Allergen is assigned to a food");
+            }
 
             _context.Remove(allergen);
             _context.SaveChanges();

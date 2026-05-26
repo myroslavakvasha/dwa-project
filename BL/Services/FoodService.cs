@@ -70,6 +70,16 @@ namespace BL.Services
 
         public FoodResponseDto Create(FoodRequestDto createdFood)
         {
+            if (_context.Foods.Any(
+                x => x.Name == createdFood.Name
+                && x.Weight == createdFood.Weight
+                && x.Price == createdFood.Price
+                && x.CategoryId==createdFood.CategoryId))
+            {
+                _logService.LogAction("ERROR", $"Attempt to create already existing food ({createdFood.Name}).");
+                throw new Exception("Food already exists");
+            }
+
             if (!_context.Categories.Any(x => x.Id == createdFood.CategoryId))
             {
                 _logService.LogAction("ERROR", $"Cannot create food with category id={createdFood.CategoryId} (doesn't exist).");
@@ -114,6 +124,17 @@ namespace BL.Services
             {
                 _logService.LogAction("ERROR", $"Cannot update food with category id={updatedFood.CategoryId} (doesn't exist).");
                 throw new Exception("No category with such Id exists");
+            }
+
+            if (_context.Foods.Any(
+                x => x.Name == updatedFood.Name
+                && x.Weight == updatedFood.Weight
+                && x.Price == updatedFood.Price
+                && x.CategoryId == updatedFood.CategoryId
+                && x.Id != id))
+            {
+                _logService.LogAction("ERROR", $"Attempt to update food {updatedFood.Name} (same food already exists).");
+                throw new Exception("Food already exists");
             }
 
             food.Id = id;

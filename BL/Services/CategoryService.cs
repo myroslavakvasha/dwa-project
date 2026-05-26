@@ -56,6 +56,12 @@ namespace BL.Services
                 throw new Exception("No category with such Id exists");
             }
 
+            if (_context.Categories.Any(x => x.Name == updatedCategory.Name && x.Id != id))
+            {
+                _logService.LogAction("ERROR", $"Attempt to update category {updatedCategory.Name} (same category already exists).");
+                throw new Exception("Category already exists");
+            }
+
             category.Id = id;
             category.Name = updatedCategory.Name;
 
