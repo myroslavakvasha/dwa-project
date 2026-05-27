@@ -104,7 +104,7 @@ namespace WebAPI.Controllers
         {
             try
             {
-                List<FoodResponseDto> search = _service.Search(name, description, page, count);
+                List<FoodResponseDto> search = _service.Search(name, description, null, page, count);
                 return Ok(search);
             }
             catch (Exception ex)

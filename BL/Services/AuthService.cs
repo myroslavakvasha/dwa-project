@@ -111,5 +111,38 @@ namespace BL.Services
                 Phone = user.Phone
             };
         }
+
+        public List<UserResponseDto> GetAllUsers() => 
+            _context.Users
+            .Include(x => x.Role)
+            .Where(x => x.Role.RoleTitle.ToLower().Equals("user"))
+            .Select(x => new UserResponseDto
+            {
+                Username = x.Username,
+                RoleTitle = x.Role.RoleTitle,
+                FirstName = x.FirstName,
+                LastName = x.LastName,
+                Email = x.Email,
+                Phone = x.Phone
+            })
+            .ToList();
+
+        public UserResponseDto GetByUsername(string username)
+        {
+            User? user = _context.Users.Include(x => x.Role).FirstOrDefault(x => x.Username.Equals(username));
+            if (user == null)
+                throw new Exception("Username doesn't exist");
+
+            return new UserResponseDto
+            {
+                Username = user.Username,
+                RoleTitle = user.Role.RoleTitle,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email,
+                Phone = user.Phone
+            };
+        }
+
     }
 }

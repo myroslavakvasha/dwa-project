@@ -32,7 +32,7 @@ namespace BL.Services
 
         public CategoryResponseDto Create(CategoryRequestDto createdCategory)
         {
-            if (_context.Categories.Any(x => x.Name == createdCategory.Name))
+            if (_context.Categories.Any(x => x.Name.Trim().ToLower() == createdCategory.Name.Trim().ToLower()))
             {
                 _logService.LogAction("ERROR", $"Attempt to create already existing category ({createdCategory.Name}).");
                 throw new Exception("Category already exists");

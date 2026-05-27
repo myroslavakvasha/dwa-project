@@ -4,6 +4,7 @@ using BL.Models;
 using BL.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -100,10 +101,28 @@ namespace WebApp.Controllers
             }
         }
 
+        [Authorize]
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Login", "Auth");
         }
+
+        [Authorize]
+        [HttpGet]
+        public ActionResult Profile()
+        {
+            try
+            {
+                var username = User.Identity.Name;
+                ProfileVM profileVM = _mapper.Map<ProfileVM>(_service.GetByUsername(username));
+                return View(profileVM);
+            }
+            catch (Exception ex)
+            {
+                return View("Error", ex.Message);
+            }
+        }
+
     }
 }

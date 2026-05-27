@@ -71,7 +71,7 @@ namespace BL.Services
         public FoodResponseDto Create(FoodRequestDto createdFood)
         {
             if (_context.Foods.Any(
-                x => x.Name == createdFood.Name
+                x => x.Name.Trim().ToLower() == createdFood.Name.Trim().ToLower()
                 && x.Weight == createdFood.Weight
                 && x.Price == createdFood.Price
                 && x.CategoryId==createdFood.CategoryId))

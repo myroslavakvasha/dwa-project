@@ -16,12 +16,12 @@
     background-color: #fff;
 }
 
-    .delete-card h1 {
-        font-size: 20px;
-        font-weight: 700;
-        color: #111;
-        margin: 0 0 8px 0;
-    }
+.delete-card h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111;
+    margin: 0 0 8px 0;
+}
 
 .delete-warning {
     font-size: 13px;
@@ -60,9 +60,9 @@
     margin-top: 28px;
 }
 
-    .delete-actions form {
-        margin: 0;
-    }
+.delete-actions form {
+    margin: 0;
+}
 
 .btn-cancel {
     padding: 8px 24px;
@@ -77,11 +77,11 @@
     transition: border-color 0.2s;
 }
 
-    .btn-cancel:hover {
-        border-color: darkblue;
-        color: darkblue;
-        text-decoration: none;
-    }
+.btn-cancel:hover {
+    border-color: darkblue;
+    color: darkblue;
+    text-decoration: none;
+}
 
 .btn-danger {
     padding: 8px 24px;
@@ -96,6 +96,10 @@
     transition: background-color 0.2s;
 }
 
-    .btn-danger:hover {
-        background-color: #922b21;
-    }
+.btn-danger:hover {
+    background-color: #922b21;
+}
+
+.delete-card.delete-card--wide {
+    max-width: 800px;
+}

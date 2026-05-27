@@ -32,7 +32,7 @@ namespace BL.Services
 
         public AllergenResponseDto Create(AllergenRequestDto createdAllergen)
         {
-            if (_context.Allergens.Any(x => x.Name == createdAllergen.Name))
+            if (_context.Allergens.Any(x => x.Name.Trim().ToLower() == createdAllergen.Name.Trim().ToLower()))
             {
                 _logService.LogAction("ERROR", $"Attempt to create already existing allergen ({createdAllergen.Name}).");
                 throw new Exception("Allergen already exists");

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.InteropServices;
 using WebApp.ViewModels.Allergen;
 
-namespace WebApp.ViewModels
+namespace WebApp.ViewModels.FoodAllergen
 {
     public class FoodAllergenVM
     {

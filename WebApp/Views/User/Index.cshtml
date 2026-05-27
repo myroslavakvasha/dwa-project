@@ -1,0 +1,37 @@
+﻿@model IEnumerable<WebApp.ViewModels.User.UserRowVM>
+
+@{
+	ViewData["Title"] = "Users";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="/css/index.css" />
+}
+
+<div class="food-index-container">
+    <h2>Users</h2>
+
+<div class="food-index-container">
+
+        <div class="food-list-header">
+            <span>Username</span>
+            <span>Full name</span>
+            <span style="flex: 2; text-align: left;">Email - Phone</span>
+            <span></span>
+        </div>
+
+    <div class="food-list">
+        @foreach (var item in Model)
+        {
+            <div class="food-row">
+                <span class="food-row-name">@item.Username</span>
+                <span class="food-row-desc">@item.FirstName @item.LastName</span>
+                    <span class="food-row-desc">@item.Email — @item.Phone</span>
+    
+                <div class="food-row-actions">
+                    <a asp-controller="Order" asp-route-username="@item.Username" asp-action="Index" class="btn-edit">Orders</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>

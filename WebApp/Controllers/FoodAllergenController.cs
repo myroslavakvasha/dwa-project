@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using WebApp.ViewModels;
 using WebApp.ViewModels.Allergen;
+using WebApp.ViewModels.FoodAllergen;
 
 namespace WebApp.Controllers
 {

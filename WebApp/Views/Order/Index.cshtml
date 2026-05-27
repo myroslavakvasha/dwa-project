@@ -1,0 +1,49 @@
+﻿@model IEnumerable<WebApp.ViewModels.Order.OrderRowVM>
+
+@{
+    ViewData["Title"] = "Orders";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="/css/delete.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+}
+
+<div class="food-index-container">
+    <h2>Orders for @ViewBag.Username</h2>
+
+    @if (!Model.Any())
+    {
+        <p style="color: #666; font-size: 13px; margin-top: 16px;">This user has no orders yet.</p>
+    }
+    else
+    {
+        <div class="food-list-header">
+            <span style="flex: 0 0 80px;">Order id</span>
+            <span style="flex: 0 0 140px;">Order date</span>
+            <span style="flex: 0 0 100px;">Payment</span>
+            <span style="flex: 1;">Comment</span>
+            <span style="width: 240px;"></span>
+        </div>
+
+        <div class="food-list">
+            @foreach (var item in Model)
+            {
+                <div class="food-row">
+                    <span class="food-row-name">#@item.Id</span>
+                    <span class="food-row-desc">@item.Date.ToString("dd.MM.yyyy HH:mm")</span>
+                    <span class="food-row-desc">@item.PaymentType</span>
+                    <span class="food-row-desc">@(string.IsNullOrEmpty(item.Comment) ? "—" : item.Comment)</span>
+
+                    <div class="food-row-actions">
+                        <a asp-action="Details" asp-route-id="@item.Id" asp-route-orderUsername="@ViewBag.Username" class="btn-edit">Details</a>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+
+    <div style="margin-top: 20px;">
+        <a asp-controller="User" asp-action="Index" class="btn-cancel">Back to Users</a>
+    </div>
+</div>
