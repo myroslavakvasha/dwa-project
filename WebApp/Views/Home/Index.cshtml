@@ -1,6 +1,32 @@
 ﻿@{
-	Layout = null;
-	ViewData["Title"] = "Home page";
+    Layout = null;
+    ViewData["Title"] = "Mandry";
 }
 
-<a asp-controller="Auth" asp-action="Login">Log in</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mandry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/landing.css" />
+</head>
+<body>
+    <div class="landing-wrapper">
+        <div class="landing-image"></div>
+        <div class="landing-content">
+            <p class="landing-label">Grill &amp; Pizza</p>
+            <h1 class="landing-title">Mandry</h1>
+            <p class="landing-body">
+                We believe great food starts with fire. At Mandry, every dish is
+                crafted from fresh ingredients over an open flame — from our signature
+                wood-fired pizzas to slow-grilled cuts of meat. Whether you're here
+                for a quick bite or a long evening, there's always something worth
+                staying for.
+            </p>
+            <a asp-controller="Auth" asp-action="Login" class="btn-explore">See Inside</a>
+        </div>
+    </div>
+</body>
+</html>

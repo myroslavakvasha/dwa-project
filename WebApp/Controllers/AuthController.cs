@@ -69,9 +69,9 @@ namespace WebApp.Controllers
 
                 return RedirectToAction("Index", "Menu");
             }
-            catch
+            catch(Exception ex)
             {
-                return View();
+                return View("Error", ex.Message);
             }
         }
 
@@ -92,13 +92,19 @@ namespace WebApp.Controllers
 
                 _service.Register(_mapper.Map<UserRegisterDto>(registerVM));
 
-                return RedirectToAction(nameof(Login));
+                return RedirectToAction("RegisterConfirmation");
             }
             catch(Exception ex) 
             {
                 ModelState.AddModelError("", ex.Message);
                 return View(registerVM);
             }
+        }
+
+        [HttpGet]
+        public ActionResult RegisterConfirmation()
+        {
+            return View();
         }
 
         [Authorize]
@@ -124,5 +130,65 @@ namespace WebApp.Controllers
             }
         }
 
+        [Authorize]
+        [HttpPost]
+        public JsonResult SaveProfile(ProfileVM profileVM)
+        {
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState.Values
+                    .SelectMany(v => v.Errors)
+                    .Select(e => e.ErrorMessage)
+                    .FirstOrDefault();
+                return Json(new { success = false, message = errors });
+            }
+
+            try
+            {
+                UserUpdateDto userUpdateDto = _mapper.Map<UserUpdateDto>(profileVM);
+                var username = User.Identity.Name;
+                userUpdateDto.Username = username;
+
+                _service.UpdateProfile(userUpdateDto);
+
+                return Json(new { success = true });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message });
+            }
+        }
+
+        [Authorize]
+        [HttpGet]
+        public ActionResult ChangePassword()
+        {
+            return View(new ChangePasswordVM());
+        }
+
+        [Authorize]
+        [HttpPost]
+        public JsonResult SavePassword(ChangePasswordVM changePasswordVM)
+        {
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState.Values
+                    .SelectMany(v => v.Errors)
+                    .Select(e => e.ErrorMessage)
+                    .FirstOrDefault();
+                return Json(new { success = false, message = errors });
+            }
+
+            try
+            {
+                var username = User.Identity.Name;
+                _service.ChangePassword(username, changePasswordVM.OldPassword, changePasswordVM.NewPassword);
+                return Json(new { success = true });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message });
+            }
+        }
     }
 }

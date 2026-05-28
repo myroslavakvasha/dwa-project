@@ -1,0 +1,16 @@
+﻿@model string
+
+@{
+    ViewData["Title"] = "Error";
+}
+
+<link rel="stylesheet" href="~/css/error.css" />
+
+<div class="error-wrapper">
+    <div class="error-card">
+        <p class="error-code">Error</p>
+        <h1 class="error-title">Something went wrong</h1>
+        <p class="error-message">@Model</p>
+        <a href="javascript:history.back()" class="btn-back">Go Back</a>
+    </div>
+</div>

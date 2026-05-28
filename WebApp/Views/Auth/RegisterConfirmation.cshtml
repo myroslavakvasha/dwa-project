@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Registration Successful";
+}
+
+<link rel="stylesheet" href="~/css/error.css" />
+
+<div class="error-wrapper">
+    <div class="error-card">
+        <p class="error-code" style="color: green;">Success</p>
+        <h1 class="error-title">You're all set!</h1>
+        <p class="error-message">Your account has been created. You can now log in and start exploring the menu.</p>
+        <a asp-controller="Auth" asp-action="Login" class="btn-back">Go to Login</a>
+    </div>
+</div>

@@ -9,7 +9,7 @@ namespace WebApp.ViewModels.Auth
         public string OldPassword { get; set; }
 
         [Required(ErrorMessage = "New password is required")]
-        [StringLength(256, MinimumLength = 8)]
+        [StringLength(256, MinimumLength = 8, ErrorMessage = "Password must be at least 8 characters long")]
         [Display(Name = "New Password")]
         public string NewPassword { get; set; }
 

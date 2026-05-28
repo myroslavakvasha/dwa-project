@@ -1,10 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebApp.ViewModels.Auth
 {
     public class ProfileVM
     {
-        [Required(ErrorMessage = "Username name is required.")]
+        [ValidateNever]
         [Display(Name = "Username")]
         public string Username { get; set; }
 
