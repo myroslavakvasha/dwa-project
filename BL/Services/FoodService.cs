@@ -30,6 +30,7 @@ namespace BL.Services
                 Weight = x.Weight,
                 Price = x.Price,
                 Description = x.Description,
+                ImageUrl = x.ImageUrl,
                 Allergens = x.Allergens
                     .Select(y => new AllergenResponseDto
                     {
@@ -58,6 +59,7 @@ namespace BL.Services
                 Weight = food.Weight,
                 Price = food.Price,
                 Description = food.Description,
+                ImageUrl = food.ImageUrl,
                 Allergens = food.Allergens
                     .Select(x => new AllergenResponseDto
                     {

@@ -1,0 +1,49 @@
+﻿@model WebApp.ViewModels.Menu.MenuIndexVM;
+
+@{
+    ViewData["Title"] = "Menu";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="/css/index.css" />
+}
+
+<div class="food-index-container">
+    <form asp-action="Index" method="GET">
+        <div class="food-toolbar">
+            <input asp-for="Q" class="food-search-input" placeholder="Search food" />
+            <select asp-for="CategoryId" asp-items="Model.Categories" class="food-category-select">
+                <option value="">-- All categories --</option>
+            </select>
+            <button type="submit" class="btn-search">Search</button>
+        </div>
+    </form>
+
+    <div class="food-list-header">
+        <span>Name</span>
+        <span>Description</span>
+        <span>Category — Price — Weight</span>
+    </div>
+
+    <div class="food-list">
+        @foreach (var item in Model.Foods)
+        {
+            <a class="food-row" asp-action="Details" asp-route-id="@item.Id">
+                <span class="food-row-name">@item.Name</span>
+                <span class="food-row-desc">@item.Description</span>
+                <span class="food-row-meta">@item.CategoryName — €@item.Price.ToString("0.00") — @item.Weight g</span>
+            </a>
+        }
+    </div>
+
+    <div class="food-bottom-bar">
+        @if (Model.Page > 1)
+        {
+            <a asp-action="Index" asp-route-q="@Model.Q" asp-route-categoryId="@Model.CategoryId" asp-route-page="@(Model.Page - 1)" class="btn-search">← Previous</a>
+        }
+        @if (Model.Page < Model.LastPage)
+        {
+            <a asp-action="Index" asp-route-q="@Model.Q" asp-route-categoryId="@Model.CategoryId" asp-route-page="@(Model.Page + 1)" class="btn-search">Next →</a>
+        }
+    </div>
+</div>

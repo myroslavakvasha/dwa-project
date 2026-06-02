@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebApp.ViewModels.Food
 {
@@ -23,6 +24,9 @@ namespace WebApp.ViewModels.Food
         [Display(Name = "Food description")]
 
         public string? Description { get; set; }
+
+        [ValidateNever]
+        public string? ImageUrl { get; set; }
 
     }
 }

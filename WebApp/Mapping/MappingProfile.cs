@@ -36,6 +36,7 @@ namespace WebApp.Mapping
 
             CreateMap<UserResponseDto, ProfileVM>();
             CreateMap<ProfileVM, UserUpdateDto>();
+
         }
     }
 }
