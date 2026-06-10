@@ -65,6 +65,8 @@
             <input type="submit" value="Register" />
         </form>
 
+        <div asp-validation-summary="ModelOnly" class="field-validation-error"></div>
+
         <div class="signup-text">
             <p>
                 Already have an account?
@@ -73,10 +75,10 @@
         </div>
     </div>
 
-    @section Scripts {
-        @{
-            await Html.RenderPartialAsync("_ValidationScriptsPartial");
-        }
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+}
 </body>
 </html>

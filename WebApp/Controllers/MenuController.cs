@@ -55,8 +55,15 @@ namespace WebApp.Controllers
         // GET: MenuController/Details/5
         public ActionResult Details(int id)
         {
-            var food = _mapper.Map<FoodRowVM>(_foodService.GetById(id));
-            return View(food);
+            try
+            {
+                var food = _mapper.Map<MenuDetailsVM>(_foodService.GetById(id));
+                return View(food);
+            }
+            catch (Exception ex)
+            {
+                return View("Error", ex.Message);
+            }
         }
     }
 }

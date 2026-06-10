@@ -111,6 +111,8 @@ namespace WebApp.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            HttpContext.Session.Remove("basket");
+
             return RedirectToAction("Login", "Auth");
         }
 

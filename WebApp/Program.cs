@@ -19,6 +19,16 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.AccessDeniedPath = "/Auth/AccessDenied";
     });
 
+// session
+builder.Services.AddDistributedMemoryCache();
+
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(10);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
 builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<LogService>();
 builder.Services.AddScoped<CategoryService>();
@@ -39,6 +49,7 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseSession();
 
 app.UseAuthentication();
 app.UseAuthorization();

@@ -8,6 +8,7 @@ using WebApp.ViewModels.Allergen;
 using WebApp.ViewModels.Auth;
 using WebApp.ViewModels.Category;
 using WebApp.ViewModels.Food;
+using WebApp.ViewModels.Menu;
 using WebApp.ViewModels.Order;
 using WebApp.ViewModels.User;
 
@@ -20,6 +21,7 @@ namespace WebApp.Mapping
             CreateMap<RegisterVM, UserRegisterDto>();
 
             CreateMap<FoodResponseDto, FoodRowVM>();
+            CreateMap<FoodResponseDto, MenuDetailsVM>();
             CreateMap<FoodFormVM, FoodRequestDto>();
 
             CreateMap<CategoryResponseDto, CategoryVM>();

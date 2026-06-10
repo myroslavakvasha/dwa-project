@@ -98,6 +98,8 @@
     border-bottom: 1px solid #eee;
     gap: 16px;
     transition: background-color 0.15s;
+    text-decoration: none;
+    color: inherit;
 }
 
 .food-row-desc {
@@ -109,6 +111,7 @@
 
 .food-row:hover {
     background-color: #f9f9f9;
+    text-decoration: none;
 }
 
 .food-row-name {
@@ -286,3 +289,73 @@
     color: #fff;
     text-decoration: none;
 }
+
+.food-page-header {
+    text-align: center;
+}
+
+.food-index-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #999;
+    margin: 0 0 6px 0;
+}
+
+.food-index-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #111;
+    margin: 0;
+    line-height: 1;
+}
+
+.food-row-img {
+    flex: 0 0 60px;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    background: #f0f0f0;
+}
+
+.food-row-center {
+    min-width: 80px;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+}
+
+.food-row-total {
+    min-width: 100px;
+    text-align: right;
+    font-size: 12px;
+    font-weight: 700;
+    color: #111;
+}
+
+.basket-total {
+    text-align: right;
+    margin-top: 16px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #111;
+}
+
+.basket-form-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #999;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.basket-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
