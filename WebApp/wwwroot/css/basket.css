@@ -1,0 +1,89 @@
+﻿.basket-empty {
+    text-align: center;
+    color: #999;
+    margin-top: 40px;
+}
+
+.basket-empty-actions {
+    margin-top: 24px;
+}
+
+.basket-list {
+    margin-top: 32px;
+}
+
+/* Own header class to avoid nth-child conflicts with index.css */
+.basket-list-header {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 16px;
+    border-bottom: 2px solid #111;
+}
+
+    .basket-list-header span {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #555;
+    }
+
+/* Column classes shared between header spans and row spans */
+.basket-col-img {
+    flex: 0 0 60px;
+}
+
+.basket-col-name {
+    flex: 1;
+}
+
+.basket-col-price {
+    min-width: 100px;
+    text-align: right;
+    font-size: 12px;
+    color: #666;
+}
+
+.basket-col-qty {
+    min-width: 80px;
+    text-align: center;
+}
+
+.basket-col-subtotal {
+    min-width: 100px;
+    text-align: right;
+}
+
+.basket-col-remove {
+    width: 100px;
+    margin-left: 16px;
+}
+
+.basket-row-remove {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.basket-order-form {
+    margin-top: 32px;
+}
+
+.basket-form-group {
+    margin-bottom: 16px;
+}
+
+.basket-comment-group {
+    margin-bottom: 24px;
+}
+
+.basket-comment {
+    width: 100%;
+    resize: vertical;
+}
+
+/* Avoids inline @style on Html.ValidationMessageFor */
+.field-validation-error {
+    color: #c0392b;
+    font-size: 12px;
+}

@@ -1,0 +1,76 @@
+﻿.confirmation-subtitle {
+    font-size: 14px;
+    color: #555;
+    margin: 8px 0 0 0;
+}
+
+.confirmation-meta {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 28px 0 32px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.confirmation-meta-row {
+    display: flex;
+    gap: 16px;
+    font-size: 13px;
+}
+
+.confirmation-meta-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #999;
+    min-width: 80px;
+    padding-top: 1px;
+}
+
+.confirmation-meta-value {
+    color: #111;
+    font-weight: 500;
+}
+
+.confirmation-list {
+    margin-top: 0;
+}
+
+.confirmation-list-header {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 16px;
+    border-bottom: 2px solid #111;
+}
+
+    .confirmation-list-header span {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #555;
+    }
+
+.confirmation-col-name {
+    flex: 1;
+}
+
+.confirmation-col-qty {
+    min-width: 80px;
+    text-align: center;
+}
+
+.confirmation-col-subtotal {
+    min-width: 100px;
+    text-align: right;
+}
+
+.confirmation-actions {
+    margin-top: 32px;
+    display: flex;
+    justify-content: flex-end;
+}

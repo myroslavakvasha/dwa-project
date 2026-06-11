@@ -5,6 +5,7 @@
 }
 
 <link rel="stylesheet" href="~/css/index.css" />
+<link rel="stylesheet" href="~/css/basket.css" />
 
 <div class="food-index-container">
     <div class="food-page-header">
@@ -14,21 +15,21 @@
 
     @if (!Model.Items.Any())
     {
-        <p style="text-align:center; color:#999; margin-top:40px;">Your basket is empty.</p>
-        <div class="basket-actions" style="margin-top:24px;">
+        <p class="basket-empty">Your basket is empty.</p>
+        <div class="basket-actions basket-empty-actions">
             @Html.ActionLink("← Back to Menu", "Index", "Menu", null, new { @class = "btn-edit" })
         </div>
     }
     else
     {
-        <div class="food-list" style="margin-top: 32px;">
-            <div class="food-list-header">
-                <span style="flex: 0 0 60px;"></span>
-                <span style="flex: 1;">Item</span>
-                <span style="min-width: 100px; text-align:right;">Price</span>
-                <span style="min-width: 80px; text-align:center;">Qty</span>
-                <span style="min-width: 100px; text-align:right;">Subtotal</span>
-                <span style="width: 100px; margin-left:16px;"></span>
+        <div class="food-list basket-list">
+            <div class="basket-list-header">
+                <span class="basket-col-img"></span>
+                <span class="basket-col-name">Item</span>
+                <span class="basket-col-price">Price</span>
+                <span class="basket-col-qty">Qty</span>
+                <span class="basket-col-subtotal">Subtotal</span>
+                <span class="basket-col-remove"></span>
             </div>
 
             @foreach (var item in Model.Items)
@@ -43,19 +44,12 @@
                         <div class="food-row-img"></div>
                     }
 
-                    <span class="food-row-name" style="flex:1;">@item.Name</span>
-
-                    <span class="food-row-meta" style="min-width:100px; text-align:right;">
-                        $@item.Price.ToString("0.00")
-                    </span>
-
+                    <span class="food-row-name">@item.Name</span>
+                    <span class="basket-col-price">$@item.Price.ToString("0.00")</span>
                     <span class="food-row-center">@item.Quantity</span>
+                    <span class="food-row-total">$@((item.Price * item.Quantity).ToString("0.00"))</span>
 
-                    <span class="food-row-total">
-                        $@((item.Price * item.Quantity).ToString("0.00"))
-                    </span>
-
-                    <div style="width:100px; margin-left:16px; display:flex; justify-content:flex-end;">
+                    <div class="basket-col-remove basket-row-remove">
                         <form method="post" asp-controller="Basket" asp-action="Remove">
                             <input type="hidden" name="foodId" value="@item.FoodId" />
                             <button type="submit" class="btn-delete">Remove</button>
@@ -69,18 +63,16 @@
             Total: $@Model.TotalPrice.ToString("0.00")
         </div>
 
-        <form method="post" asp-controller="Basket" asp-action="PlaceOrder" style="margin-top:32px;">
-            @Html.AntiForgeryToken()
-
-            <div style="margin-bottom:16px;">
+        <form method="post" asp-controller="Basket" asp-action="PlaceOrder" class="basket-order-form">
+            <div class="basket-form-group">
                 <label class="basket-form-label">Payment Method</label>
                 @Html.DropDownListFor(x => x.PaymentType, Model.Payments, "-- Select --", new { @class = "food-category-select" })
-                @Html.ValidationMessageFor(x => x.PaymentType, "", new { @style = "color:#c0392b; font-size:12px;" })
+                @Html.ValidationMessageFor(x => x.PaymentType)
             </div>
 
-            <div style="margin-bottom:24px;">
+            <div class="basket-comment-group">
                 <label class="basket-form-label">Comment (optional)</label>
-                @Html.TextAreaFor(x => x.Comment, new { @class = "food-search-input", rows = "3", style = "width:100%; resize:vertical;" })
+                @Html.TextAreaFor(x => x.Comment, new { @class = "food-search-input basket-comment", rows = "3" })
             </div>
 
             <div class="basket-actions">

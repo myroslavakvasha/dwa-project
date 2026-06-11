@@ -45,6 +45,7 @@ namespace WebApp.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Add(int foodId)
         {
             try
@@ -81,6 +82,7 @@ namespace WebApp.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Remove(int foodId)
         {
             try
@@ -97,6 +99,7 @@ namespace WebApp.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult PlaceOrder(BasketIndexVM basketVM)
         {
             try

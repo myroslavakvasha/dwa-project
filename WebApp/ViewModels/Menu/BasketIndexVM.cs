@@ -7,6 +7,7 @@ namespace WebApp.ViewModels.Menu
 {
     public class BasketIndexVM
     {
+        [ValidateNever]
         public List<BasketItemVM> Items { get; set; }
 
         [Required(ErrorMessage = "Payment method is required")]

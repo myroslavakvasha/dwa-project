@@ -1,1 +1,63 @@
-﻿<h1>confirmed</h1>
+﻿@model WebApp.ViewModels.Order.OrderDetailVM
+
+@{
+    ViewData["Title"] = "Order Confirmed";
+}
+
+<link rel="stylesheet" href="~/css/index.css" />
+<link rel="stylesheet" href="~/css/confirmation.css" />
+
+<div class="food-index-container">
+    <div class="food-page-header">
+        <p class="food-index-label">Mandry Restaurant</p>
+        <h1 class="food-index-title">Order Confirmed!</h1>
+        <p class="confirmation-subtitle">Thank you, @Model.Username. Your order is being prepared.</p>
+    </div>
+
+    <div class="confirmation-meta">
+        <div class="confirmation-meta-row">
+            <span class="confirmation-meta-label">Order #</span>
+            <span class="confirmation-meta-value">@Model.Id</span>
+        </div>
+        <div class="confirmation-meta-row">
+            <span class="confirmation-meta-label">Date</span>
+            <span class="confirmation-meta-value">@Model.Date.ToString("dd MMM yyyy, HH:mm")</span>
+        </div>
+        <div class="confirmation-meta-row">
+            <span class="confirmation-meta-label">Payment</span>
+            <span class="confirmation-meta-value">@Model.PaymentType</span>
+        </div>
+        @if (!string.IsNullOrEmpty(Model.Comment))
+        {
+            <div class="confirmation-meta-row">
+                <span class="confirmation-meta-label">Comment</span>
+                <span class="confirmation-meta-value">@Model.Comment</span>
+            </div>
+        }
+    </div>
+
+    <div class="food-list confirmation-list">
+        <div class="confirmation-list-header">
+            <span class="confirmation-col-name">Item</span>
+            <span class="confirmation-col-qty">Qty</span>
+            <span class="confirmation-col-subtotal">Subtotal</span>
+        </div>
+
+        @foreach (var item in Model.OrderItems)
+        {
+            <div class="food-row">
+                <span class="food-row-name">@item.FoodName</span>
+                <span class="food-row-center">@item.Quantity</span>
+                <span class="food-row-total">$@item.TotalPrice.ToString("0.00")</span>
+            </div>
+        }
+    </div>
+
+    <div class="basket-total">
+        Total: $@Model.OrderItems.Sum(x => x.TotalPrice).ToString("0.00")
+    </div>
+
+    <div class="confirmation-actions">
+        @Html.ActionLink("Back to Menu", "Index", "Menu", null, new { @class = "btn-create" })
+    </div>
+</div>

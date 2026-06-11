@@ -53,7 +53,7 @@
 
                 <div class="detail-actions">
                     @Html.ActionLink("← Back to Menu", "Index", "Menu", null, new { @class = "btn-back-link" })
-                    <form method="post" action="/Basket/Add">
+                    <form method="post" asp-action="Add" asp-controller="Basket">
                         <input type="hidden" name="foodId" value="@Model.Id" />
                         <button type="submit" class="btn-order">Add to Order</button>
                     </form>

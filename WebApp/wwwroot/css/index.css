@@ -58,10 +58,13 @@
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.2s;
+    text-decoration: none;
 }
 
 .btn-search:hover {
     background-color: darkblue;
+    text-decoration: none;
+    color: #fff;
 }
 
 .food-size-bar {
