@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BL.DTOs.Food;
+using BL.Models;
 using BL.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -53,6 +54,38 @@ namespace WebApp.Controllers
                 foodVM.Categories = new SelectList(categories, "Id", "Name");
 
                 return View(foodVM);
+            }
+            catch (Exception ex)
+            {
+                return View("Error", ex.Message);
+            }
+        }
+
+        public ActionResult IndexPartial(FoodIndexVM foodVM)
+        {
+            try
+            {
+                var foodFiltered = _foodService.Search(foodVM.Q, foodVM.Q, foodVM.CategoryId == 0 ? null : foodVM.CategoryId, foodVM.Page, foodVM.Size);
+
+                var filteredCount = _foodService.GetFilteredCount(foodVM.Q, foodVM.Q, foodVM.CategoryId == 0 ? null : foodVM.CategoryId);
+
+                // BEGIN PAGER
+                var expandPages = _configuration.GetValue<int>("Paging:ExpandPages");
+                foodVM.LastPage = (int)Math.Ceiling(1.0 * filteredCount / foodVM.Size);
+                foodVM.FromPager = foodVM.Page > expandPages ?
+                  foodVM.Page - expandPages :
+                  1;
+                foodVM.ToPager = (foodVM.Page + expandPages) < foodVM.LastPage ?
+                  foodVM.Page + expandPages :
+                  foodVM.LastPage;
+                // END PAGER
+
+                foodVM.Foods = foodFiltered.Select(x => _mapper.Map<FoodRowVM>(x)).ToList();
+
+                var categories = _categoryService.GetAll();
+                foodVM.Categories = new SelectList(categories, "Id", "Name");
+
+                return View("_FoodListPartial", foodVM);
             }
             catch (Exception ex)
             {
@@ -114,6 +147,7 @@ namespace WebApp.Controllers
 
                 var foodVM = new FoodFormVM
                 {
+                    Id = foodResponseDto.Id,
                     Name = foodResponseDto.Name,
                     CategoryId = foodResponseDto.CategoryId,
                     Categories = new SelectList(categories, "Id", "Name"),
@@ -133,7 +167,7 @@ namespace WebApp.Controllers
         // POST: FoodController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, FoodFormVM foodVM)
+        public ActionResult Edit(FoodFormVM foodVM)
         {
             try
             {
@@ -145,7 +179,7 @@ namespace WebApp.Controllers
                 }
 
                 var foodRequestDto = _mapper.Map<FoodRequestDto>(foodVM);
-                _foodService.Update(id, foodRequestDto);
+                _foodService.Update(foodVM.Id, foodRequestDto);
 
                 return RedirectToAction(nameof(Index));
             }

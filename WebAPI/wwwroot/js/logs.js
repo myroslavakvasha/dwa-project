@@ -24,10 +24,10 @@ function loadLogs(){
         $("#log-list").empty();
 
         $.each(data, function (i, log) {
-            $("#log-list").append(`<li>${log.timestamp} [${log.logLevelTitle}]: ${log.message}</li>`);
+            $("#log-list").append(`<tr><td>${log.timestamp}</td><td>${log.logLevelTitle}</td><td>${log.message}</td></tr>`);
         });
     }).fail(function (err){
-        alert(err.responseText);
+        alert("Unauthorized to see the logs");
         localStorage.removeItem("JWT");
     });
 }

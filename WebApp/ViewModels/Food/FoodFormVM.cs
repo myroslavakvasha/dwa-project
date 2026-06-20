@@ -6,8 +6,10 @@ namespace WebApp.ViewModels.Food
 {
     public class FoodFormVM
     {
+        public int Id { get; set; }
+
         [Display(Name = "Food Name")]
-        [Required(ErrorMessage = "Creating a food without a name no can do")]
+        [Required(ErrorMessage = "Food without a name no can do")]
         public string Name { get; set; } = null!;
 
         [Display(Name = "Food Category")]
@@ -18,7 +20,7 @@ namespace WebApp.ViewModels.Food
         [ValidateNever]
         public SelectList Categories { get; set; }
 
-        [Display(Name = "Food Wieght")]
+        [Display(Name = "Food Weight")]
         [Range(1, 10000, ErrorMessage = "Not realistic weight")]
         public decimal? Weight { get; set; }
 

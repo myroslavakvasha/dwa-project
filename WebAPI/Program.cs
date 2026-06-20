@@ -37,7 +37,7 @@ builder.Services
 builder.Services.AddSwaggerGen(option =>
 {
     option.SwaggerDoc("v1",
-        new OpenApiInfo { Title = "RWA Web API", Version = "v1" });
+        new OpenApiInfo { Title = "DWA Web API", Version = "v1" });
 
     option.AddSecurityDefinition("Bearer",
         new OpenApiSecurityScheme

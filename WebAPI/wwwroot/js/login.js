@@ -23,7 +23,7 @@ function jwtLogin() {
         localStorage.setItem("JWT", tokenData);
         window.location.href = "/html/logs.html";
     }).fail(function (err) {
-        alert(err.responseText);
+        window.alert("Unauthorized to see the logs");
         localStorage.removeItem("JWT");
     });
 }

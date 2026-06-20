@@ -36,7 +36,15 @@
             <a class="food-row" asp-action="Details" asp-route-id="@item.Id">
                 <span class="food-row-name">@item.Name</span>
                 <span class="food-row-desc">@item.Description</span>
-                <span class="food-row-meta">@item.CategoryName — €@item.Price.ToString("0.00") — @item.Weight g</span>
+                <span class="food-row-meta">
+                    @item.CategoryName — €@item.Price.ToString("0.00")
+                    @if (item.Weight.HasValue) {
+                        <text>— @item.Weight g</text>
+                    } else
+                    {
+                        <text>— 0g</text>
+                    }
+                </span>
             </a>
         }
     </div>

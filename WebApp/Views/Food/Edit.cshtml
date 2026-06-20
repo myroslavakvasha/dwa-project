@@ -17,6 +17,8 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="food-form-grid">
 
+                <input type="hidden" asp-for="Id" />
+
                 <div class="food-form-group">
                     <label asp-for="Name"></label>
                     <input asp-for="Name" />
