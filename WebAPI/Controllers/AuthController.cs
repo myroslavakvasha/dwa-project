@@ -78,7 +78,7 @@ namespace WebAPI.Controllers
 
                 // Create and return JWT token
                 var secureKey = _configuration["JWT:SecureKey"];
-                var serializedToken = JwtTokenProvider.CreateToken(secureKey, 120, user.Username, user.RoleTitle);
+                var serializedToken = JwtTokenProvider.CreateToken(secureKey, 30, user.Username, user.RoleTitle);
 
                 return Ok(serializedToken);
             }
